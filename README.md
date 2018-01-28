@@ -97,6 +97,89 @@ callByName().invoke() // Kotlin
 callByName()() // Kotlin
 ```
 
+### 9. Null
+- 타입 뒤에 ?가 오면 해당 타입은 nullable
+- ?가 붙은 Data는 항상 null check
+
+
+익명함수 내부에서는 마지막 값을 반환한다.
+- if else 항상 반환한다.
+- {} 블럭으로 있을 경우 마지막 줄의 값을 반환함
+- if, else을 표현식으로 사용할 경우에는 if가 있으면 else가 항상 있어야함
+**- kotlin에서 if/else는 표현식이다. ~~~~**
+
+### 10. Any
+- 최상위 객체인 Object 의미 (in Java)
+
+### 11. for each
+```java
+for((index, value) 
+```
+- kotlin for loop, list.withIndex()
+### 12. Property
+- 자바의 맴버변수와 같은 역할
+- val 은 set 안됨
+- var 
+
+// 그냥 필드 
+class Person(firstName : String, lastName : String, age: INt)
+
+// property 
+class Person2(val .... )
+
+
+- 생성자 호출 후, init 함수 호출 
+- 생성자 오버로딩
+- data class : 제약사항 존재 / default value
+- distructing
+- copy 
+- enum class, sealed class( interface와 비교하기 ) -> 대수적 타입이다
+- enum 굉장히 flat, sealed class -> 다양한 타입 // 다양한 타입을 처리해야하는 경우, compile 단에서 에러 체크가 가능하므로 유용하게 사용할 수 있다. 
+- kotlin class ( defalut is final ) // open과 abstract는 차이가 있다
+- lambda -> interface가 하나일 경우에만 가능 // 파라미터 하나면 생략 
+
+- `joinToString()`
+- 확장함수 
+- 라이브러리에 함수 추가 확장하여 사용
+- 마지막 인자가 함수면 밖으로 뺄 수 있다 
+- [standard lib](https://academy.realm.io/kr/posts/kotlin-let-run-apply-lateinit/)
+- apply와 with 거의 비슷하다
+- it // this ;; 
+- standard 코드 까보면 람다식 반환하는 흐름을 익히며 좋음 
+- syntax, standar lib
+- use :  stream closable -> .close(); // file io
+- reapeat :
+- range
+
+
+http://tourspace.tistory.com/56
+http://blog.import.re/post/kotlin-let-apply-run-with-use/
+https://academy.realm.io/kr/posts/kotlin-let-run-apply-lateinit/
+http://kunny.github.io/lecture/kotlin/2016/07/06/kotlin_let_apply_run_with/
+
+
+### Collections (default immutable)
+- element들에 대한 update 
+- val/var 
+##### 1.1. Mutable
+##### 1.2. Immutable
+- ex) `List<Int>`, `List<String>`
+- `.plus()` = 새로운 인스턴스 반환 
+- 비효율적 x, 같은 자료를 사용함
+
+
+- fold : 재귀적으로 돌아감 
+- take, take last
+- Mapping operation ( map // T -> R 타입변환 )
+- flatMap ( boxing data -> making list in list )
+- groupBy()
+
+
+
+
+
+
+
 
 
 
