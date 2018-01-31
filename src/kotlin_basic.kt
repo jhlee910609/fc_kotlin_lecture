@@ -24,7 +24,6 @@ fun main(args: Array<String>) {
     // class
     val junhee = Person_1("Junhee, Lee", 28)
     println("name : ${junhee.name}, age : ${junhee.age} ")
-
     println(checkNumber(23))
 }
 
