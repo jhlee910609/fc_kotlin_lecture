@@ -173,6 +173,52 @@ http://kunny.github.io/lecture/kotlin/2016/07/06/kotlin_let_apply_run_with/
 - Mapping operation ( map // T -> R 타입변환 )
 - flatMap ( boxing data -> making list in list )
 - groupBy()
+- elementOrNull()
+- 
+
+
+
+### 코틀린 파일 level에서 코드작성 가능하다
+
+- `@file:JvmName("MyUtils")` : 컴파일러가 CallKotilnKt object 자동 생성
+- `@file:JvmMultifileClass` : 해당 각기 다 `.kt` 파일에 이름을 붙힌다. 
+- `@JvmField` : 해당 어노테이션을 사용하면 java에서도 kotlin의 property로 접근할 수 있다. // 일반 프로퍼티에서만 사용가능하다. 
+-  `companion object` : 클래스 이름과 같은 obj를 생성한다. // static 성 프로퍼티들 
+-  `@JvmField` : var에만 사용할 수 있음 
+-  `companion object` : Java 때.... ㅜ 
+-  `@JvmOverload` : 
+-  calling java code in kotlin : get, set prefix가 있어야 프로퍼티로 호출 가능하다. 
+-  kotlin 예약어들 사용할 때, 근데 java에선 그렇지 않을 경우 ex) objectSet, in, is.. `is` 붙혀줘야함  
+-  java 클래스 던지기 => Intent(cxt, Activity::class.java)
+
+
+### Delegates
+- lazy 관련된 것들의 문제는 호출시점이 명확하지 않기 때문에 라이프 사이클을 항상 생각해야한다. 
+##### 1.1. by lazy
+- `by lazy` : 최초 call 후, 결과값이 같으면 최초 결과를 캐싱해놓았다가 반환한다. resource 관리에 효과적이다. 빈번하게 호출하는데, 리소스를 많이 잡아먹을 경우에 해당된다.
+- life cycle 생각하고, `lateinit`, `by lazy` 사용할 때 주의해야함!!!!!
+- 다른 결과값을 반환할 경우에 사용하면 안됨 
+- call 되는 시점의 확신이 있을 때 사용하면 좋다!  
+- by lazy는 val에서만 사용가능 -> 콜될 때, 캐싱
+
+
+##### 1.2. lateinit
+- 무조건 한 번은 셋이 될 거고, 값이 있는 상태에서 사용할 거야
+- 캐싱되지 않음 
+
+
+### 함수적 자료구조
+- 함수적 자료구조 = 오직 순수 함수로만 조작되는 자료구조
+- data	변경, 기타 side effect 발생 x
+- 함수적 자료구조 불변
+
+
+
+
+
+
+
+
 
 
 

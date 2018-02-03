@@ -41,7 +41,6 @@ fun checkNumber(num: Int): String =
             "홀수"
         }
 
-
 class Person_2(name: String, age: Int)
 
 fun add_2(x: Int, y: Int): Int = x + y
